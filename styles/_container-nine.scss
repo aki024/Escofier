@@ -1,0 +1,124 @@
+@import './variables';
+@import './fonts';
+
+%flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+%centered-content {
+	align-items: center;
+	justify-content: center;
+}
+
+.container--nine {
+	background-image: url('../assets/images/why-choose-escoffier-mobile-crop.jpg');
+
+	background-size: cover;
+	background-position: 50% 20%;
+	background-repeat: no-repeat;
+	color: $header-button-text-color;
+
+	.wrapper {
+		@extend %flex-column;
+		gap: 3rem;
+		padding: 1rem;
+
+		.content--top {
+			@extend %flex-column;
+			@extend %centered-content;
+			gap: 1rem;
+			text-align: center;
+			margin-top: 2rem;
+
+			h1 {
+				font-size: 32px;
+				text-transform: uppercase;
+				position: relative;
+			}
+
+			hr {
+				height: 1px;
+				width: 20px;
+				border-color: $main-red-color;
+			}
+		}
+
+		.content--bottom {
+			.chooseUsContainer {
+				display: flex;
+				flex-direction: column;
+				gap: 5rem;
+				padding: 5rem 0rem;
+
+				.chooseUsCard {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					text-align: center;
+
+					gap: 1rem;
+
+					img {
+						max-width: 80px;
+					}
+
+					h4 {
+						font-size: 24px;
+					}
+
+					h5 {
+						text-transform: uppercase;
+						font-size: 14px;
+					}
+
+					p {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.container--nine {
+		background-image: url('../assets/images/chef-finishing-plated-dish.jpg');
+		.wrapper {
+			.content--bottom {
+				.chooseUsContainer {
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: flex-start;
+					gap: 4em 0;
+
+					& > .chooseUsCard {
+						flex: 0 0 50%;
+						justify-content: flex-start;
+					}
+
+					& > .chooseUsCard:last-child {
+						flex: 0 0 100%;
+						display: flex;
+						justify-content: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.container--nine {
+		.wrapper {
+			.content--bottom {
+				.chooseUsContainer {
+					& > .chooseUsCard {
+						flex: 0 0 33%;
+					}
+				}
+			}
+		}
+	}
+}

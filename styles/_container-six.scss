@@ -1,0 +1,144 @@
+@import './variables';
+@import './fonts';
+
+%flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+%centered-content {
+	align-items: center;
+	justify-content: center;
+}
+
+.container--six {
+	.wrapper {
+		@extend %flex-column;
+
+		gap: 2rem;
+
+		.content--top {
+			h1 {
+				color: $main-red-color;
+				font-size: 32px;
+				font-weight: 500;
+			}
+		}
+
+		.content--bottom {
+			display: flex;
+			flex-direction: column-reverse;
+			background-color: $card-background-color;
+			gap: 3rem;
+
+			.descriptionContainer {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+
+				h2 {
+					text-transform: uppercase;
+					color: $card-back-text-color;
+					text-align: center;
+					margin: 0 2rem;
+					font-weight: 900;
+					font-size: 28px;
+				}
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					gap: 3rem;
+
+					li {
+						list-style: none;
+						font-size: 24px;
+						font-weight: 400;
+						color: $card-text-color;
+						display: flex;
+						align-items: flex-start;
+						gap: 2rem;
+
+						&::before {
+							background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/05/checkmark-2x-red.png');
+							background-repeat: no-repeat;
+							background-position: center;
+							padding: 0.75rem;
+							content: '';
+							border-radius: 50%;
+							background-size: contain;
+							margin: 0 0 0 2rem;
+						}
+					}
+				}
+			}
+
+			.videoContainer {
+				min-height: 300px;
+				// margin: -1rem;
+				background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/06/Escoffier-student-rolling-dough.jpg');
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				.playButton {
+					background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/03/play_button.png');
+					background-position: center;
+					background-size: contain;
+					background-repeat: no-repeat;
+					padding: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.container--six {
+		.wrapper {
+			.content--bottom {
+				.videoContainer {
+					background-position: center top;
+					margin: 3rem 0;
+				}
+
+				.descriptionContainer {
+					padding: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.container--six {
+		.wrapper {
+			.content--top {
+				text-align: center;
+			}
+
+			.content--bottom {
+				flex-direction: row;
+
+				.descriptionContainer {
+					flex: 1 1 50%;
+					padding: 3rem;
+				}
+
+				.videoContainer {
+					flex: 1 1 50%;
+
+					margin: 0;
+				}
+			}
+		}
+	}
+}

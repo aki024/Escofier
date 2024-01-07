@@ -1,0 +1,137 @@
+@import './variables';
+@import './fonts';
+
+%flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+%centered-content {
+	align-items: center;
+	justify-content: center;
+}
+
+.container--seven {
+	.wrapper {
+		@extend %flex-column;
+		padding: 1rem;
+		gap: 2rem;
+
+		.content--top {
+			display: flex;
+			@extend %centered-content;
+
+			h1 {
+				color: $main-red-color;
+				font-size: 32px;
+				font-weight: 500;
+			}
+		}
+
+		.content--bottom {
+			.studentsContainer {
+				display: flex;
+				flex-direction: column;
+				gap: 3rem;
+
+				.studentCard {
+					@extend %flex-column;
+					gap: 1rem;
+
+					.studentTitle {
+						color: $card-back-text-color;
+
+						& span:first-child {
+							font-weight: 500;
+							font-size: 20px;
+						}
+
+						span {
+							font-weight: 900;
+							font-size: 28px;
+						}
+					}
+
+					.videoContainer {
+						height: auto;
+						display: flex;
+						@extend %centered-content;
+						background-image: url('../assets/images/Michael-Pythoud.jpg');
+						min-height: 200px;
+						background-position: center top;
+						background-size: cover;
+						background-repeat: no-repeat;
+
+						.playButton {
+							background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/03/play_button.png');
+							background-position: center;
+							background-size: contain;
+							background-repeat: no-repeat;
+							padding: 1.5rem;
+						}
+					}
+
+					[data-video='two'] {
+						background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/06/wyl-lima.jpg');
+					}
+					[data-video='three'] {
+						background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/06/lance-mcwhorter-1.jpg');
+					}
+					[data-video='four'] {
+						background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/06/jennifer-etzkin.jpg');
+					}
+					[data-video='five'] {
+						background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/06/academics-culinary-arts.jpg');
+					}
+					[data-video='six'] {
+						background-image: url('https://www.escoffier.edu/wp-content/uploads/2020/06/holden-oleary.jpg');
+					}
+
+					.studentInfo {
+						color: $card-text-color;
+						font-weight: 100;
+
+						strong {
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.container--seven {
+		.wrapper {
+			.content--bottom {
+				.studentsContainer {
+					flex-direction: row;
+					justify-content: center;
+					flex-wrap: wrap;
+					gap: 3rem;
+
+					.studentCard {
+						width: 44%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.container--seven {
+		.wrapper {
+			.content--bottom {
+				.studentsContainer {
+					gap: 3rem;
+
+					.studentCard {
+						width: 28%;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+@import './base';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	// outline: 1px solid #f00 !important;
+}
+
+main {
+	align-items: center;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+}
+.container {
+	max-width: 1400px;
+}
+
+section {
+	margin-top: 5rem;
+}
+
+.maxWidth {
+	max-width: 1400px;
+}
+
+//Tu ce mozda neki h1 size u removima i mozda neki media query da to bude vise responsive
+h1 {
+	font-size: 2.9em; // 32px equivalent
+}
+
+h2 {
+	// font-size: 1.625em; // 26px equivalent
+	// color: white;
+}
+
+// h3 {
+// 	font-size: 1.5em; // 24px equivalent
+
+// }
+
+// h4 {
+// 	font-size: 1.25em; // 20px equivalent
+
+// }
+
+// h5 {
+// 	font-size: 0.875em; // 14px equivalent
+
+// }
+
+// h6 {
+// 	font-size: 0.75em; // 12px equivalent
+
+// }
+
+img,
+video {
+	max-width: 200px;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	background-color: $header-information-button-color;
+	color: $header-text-color;
+	padding: 1rem;
+	border: 0;
+	border-radius: 0.5rem;
+	font-family: 'TradeGothic';
+	font-size: 22px;
+	font-weight: 900;
+	flex: 1;
+
+	&:hover {
+		cursor: pointer;
+
+		background-color: lighten($color: $header-information-button-color, $amount: 20);
+	}
+}
+
+header {
+	li {
+		cursor: pointer;
+	}
+}
+
+//Hamburger meni
+
+main {
+	margin-top: 5rem;
+	font-family: 'TradeGothic';
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+}

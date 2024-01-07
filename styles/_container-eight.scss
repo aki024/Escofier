@@ -1,0 +1,59 @@
+@import './variables';
+@import './fonts';
+
+.container--eight {
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		padding: 1rem;
+	}
+
+	.content--top {
+		h1 {
+			color: $main-red-color;
+			font-size: 32px;
+			font-weight: 800;
+		}
+	}
+
+	.content--bottom {
+		display: grid;
+		justify-items: center;
+		gap: 1rem;
+		grid-template-columns: repeat(2, 1fr);
+		img {
+			max-width: 100px;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.container--eight {
+		.wrapper {
+			.content--bottom {
+				img {
+					max-width: 200px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.container--eight {
+		.wrapper {
+			.content--top {
+				h1 {
+					text-align: center;
+				}
+			}
+
+			.content--bottom {
+				grid-template-columns: repeat(4, 1fr);
+				img {
+				}
+			}
+		}
+	}
+}
